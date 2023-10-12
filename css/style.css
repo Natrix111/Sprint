@@ -1,0 +1,73 @@
+/* ============================== GLOBAL ============================== */
+/* ============================== GLOBAL ============================== */
+html, body {
+  font-family: NanitoSans, sans-serif;
+  color: #303239;
+  background: #F0F5FB;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  max-width: 1180px;
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+/* ============================== HEADER TOP ============================== */
+/* ============================== HEADER TOP ============================== */
+
+.header__top {
+  width: 100%;
+  height: 46px;
+  background-color: #18154B;
+}
+
+.header__top-inner {
+display: flex;
+justify-content: space-between;
+}
+
+.header__contact {
+display: flex;
+}
+
+.header__contact-link {
+  padding-top: 15px;
+  margin-right: 44px;
+  color: #F0F5FB;
+  font-size: 14px;
+  font-weight: 400;
+  transition: .3s;
+}
+
+.header__contact-link:hover {
+  transform: scale(1.1);
+}
+
+.header__contact-link:last-child {
+  margin-right: 0;
+}
+
+.header__contact-icon {
+  margin-right: 10px;
+}
+
+.contact__item-link {
+  padding-top: 10px;
+  margin-left: 18px;
+  transition: .3s;
+}
+
+.contact__item-link:hover {
+  transform: scale(1.1);
+}
+
+.contact__item-link:first-child {
+  margin-left: 0;
+}
