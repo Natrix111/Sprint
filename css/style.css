@@ -46,6 +46,7 @@ transition: .3s;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
   transition: .3s;
 }
 
@@ -99,7 +100,11 @@ margin-top: 40px;
 
 .main__application {
   margin-top: 80px;
-  margin-bottom: 200px;
+}
+
+.main__contact {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 /* ============================== HEADER TOP ============================== */
@@ -865,5 +870,126 @@ margin-bottom: 6px;
   padding-left: 3px;
 }
 
-/* ============================== MAIN__APLICATION ============================== */
-/* ============================== MAIN__APLICATION ============================== */
+/* ============================== MAIN__CONTACT ============================== */
+/* ============================== MAIN__CONTACT ============================== */
+
+.contact__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.contact__info {
+}
+.contact__heading {
+  margin-bottom: 40px;
+}
+
+.contact__content {
+  margin-bottom: 40px;
+}
+
+.contact__content-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact__content-item:last-child {
+  align-items: start;
+}
+
+.content__item-icon {
+  margin-right: 10px;
+  padding: 5px 0px;
+}
+
+.contact__content-text {
+  color: #303239;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%; 
+}
+
+.contact__icons-item {
+  margin-right: 20px;
+}
+
+.contact__icons-item:last-child {
+  margin-right: 0;
+}
+
+.contact__image {
+  width: 680px;
+  height: 365px;
+  border-radius: 10px;
+  background: url(<path-to-image>), lightgray 0px -23px / 100% 106.849% no-repeat;
+  box-shadow: 0px 4px 20px 0px rgba(0, 7, 94, 0.10);
+  background: url(../images/contact/map.svg) no-repeat;
+  background-position: center;
+}
+
+/* ============================== FOOTER ============================== */
+/* ============================== FOOTER ============================== */
+
+.footer {
+  width: 100%;
+  height: 336px;
+  background: #18154B;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0px;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__col-logo {
+font-size: 22px;
+margin-bottom: 16px;
+}
+
+.footer__col-mark {
+  color: #B8B8B8;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer__col-title {
+  color: #B8B8B8;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.32px;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+.footer__col-item {
+  color: #FFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.footer__col-button {
+  margin-bottom: 118px;
+}
+
+.footer__col-subtitle {
+  color: #B8B8B8;
+  text-align: right;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
