@@ -68,11 +68,11 @@
               </li>
               <li class="header__icons-item">
                   <img src="images/header/like.svg" alt="">
-                  <span class="icon-count">6</span>
+                  <span class="icon__count">6</span>
               </li>
               <li class="header__icons-item">
                   <img src="images/header/basket.svg" alt="">
-                  <span class="icon-count">3</span>
+                  <span class="icon__count">3</span>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@
               </div>
               </div>
               <div class="slider__image">
-                <img src="images/offers/block.svg" alt="">
+                <img class="slider__img" src="images/offers/block.svg" alt="">
               </div>
               <div class="slider__plagins">
                 <span class="slider__plagins-active"></span>
@@ -114,7 +114,7 @@
             </div>
             <div class="discount__info">
               <div class="discount__image">
-                <img src="images/offers/bitcoin.svg" alt="">
+                <img class="discount__img" src="images/offers/bitcoin.svg" alt="">
               </div>
               <div class="discount__btn-box">
                 <div href="" class="discount__btn">В каталог</div>
@@ -129,42 +129,54 @@
             <div class="categories__heading heading">категории товаров</div>
             <ul class="categories__list">
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/miner.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/miner.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">Asic miners оптом</div>
                   <div class="categories__item-btn">В каталог</div>
                 </div>
               </li>
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/cpu.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/gpu.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">GPU фермы оптом</div>
                   <div class="categories__item-btn">В каталог</div>
                 </div>
               </li>
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/gpu.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/cpu.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">Видеокарты оптом</div>
                   <div class="categories__item-btn">В каталог</div>
                 </div>
               </li>
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/acc.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/acc.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">Аксессуары оптом</div>
                   <div class="categories__item-btn">В каталог</div>
                 </div>
               </li>
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/pc.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/pc.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">Компьютерные комплектующие оптом</div>
                   <div class="categories__item-btn">В каталог</div>
                 </div>
               </li>
               <li class="categories__item">
-                <img class="categories__item-img" src="images/categories/components.svg" alt=""></img>
+                <div class="categories__item-box">
+                  <img class="categories__item-img" src="images/categories/components.svg" alt=""></img>
+                </div>
                 <div class="categories__item-content">
                   <div class="categories__item-text">Комплектующие для майнинга оптом</div>
                   <div class="categories__item-btn">В каталог</div>
@@ -177,8 +189,8 @@
       <section class="main__advantages">
         <div class="container">
           <div class="adventages__inner">
-            <div class="adventages__image-box">
-              <h1 class="adventages__heading title">наши преимущества</h1>
+            <div class="adventages__heading">
+              <h1 class="adventages__heading-title title">наши преимущества</h1>
             </div>
             <div class="adventages__content-box">
               <ul class="adventages__content-list">
@@ -235,7 +247,9 @@
                     <div class="slider__head-plagin">ХИТ</div>
                     <img class="slider__head-icon" src="images/carts/heart.svg" alt="">
                   </div>
-                  <img class="carts__slider-img" src="images/carts/cart1.svg" alt="">
+                  <div class="carts__slider-image">
+                    <img class="carts__slider-img" src="images/carts/cart1.svg" alt="">
+                  </div>
                   <div class="carts__slider-text">
                     <div class="slider__text-title">Antminer L7 8800 Mh/s</div>
                     <div class="slider__text-box">
@@ -256,17 +270,21 @@
                     <div class="slider__head-plagin">SALE</div>
                     <img class="slider__head-icon" src="images/carts/heart.svg" alt="">
                   </div>
-                  <img class="carts__slider-img" src="images/carts/cart2.svg" alt="">
+                  <div class="carts__slider-image">
+                    <img class="carts__slider-img" src="images/carts/cart2.svg" alt="">
+                  </div>
                   <div class="carts__slider-text">
                     <div class="slider__text-title">Antminer S19j pro 110 Th/s</div>
                     <div class="slider__text-box">
                       <div class="slider__text-dot"></div>
-                    <div class="sleder__text-subtitle">В наличии</div>
+                    <div class="sleder__text-subtitle">Под заказ</div>
                   </div>
                   </div>
                   <div class="carts__slider-price">
-                    <div class="slider__price-text">245 000 ₽</div>
-                    <div class="slider__price-desc">315 000 ₽</div>
+                    <div class="slider__price-box">
+                      <div class="slider__price-text">245 000 ₽</div>
+                      <div class="slider__price-desc">315 000 ₽</div>
+                    </div>
                     <div class="slider__price-icon">
                       <img src="images/carts/basket.svg" alt="">
                     </div>
@@ -278,7 +296,9 @@
                     <div class="slider__head-plagin">NEW</div>
                     <img class="slider__head-icon" src="images/carts/heart.svg" alt="">
                   </div>
-                  <img class="carts__slider-img" src="images/carts/cart3.svg" alt="">
+                  <div class="carts__slider-image">
+                    <img class="carts__slider-img" src="images/carts/cart3.svg" alt="">
+                  </div>
                   <div class="carts__slider-text">
                     <div class="slider__text-title">Whatsminer M3x 12.5 Th/...</div>
                     <div class="slider__text-box">
@@ -299,7 +319,9 @@
                     <div class="slider__head-plagin">SALE</div>
                     <img class="slider__head-icon" src="images/carts/heart.svg" alt="">
                   </div>
-                  <img class="carts__slider-img" src="images/carts/cart4.svg" alt="">
+                  <div class="carts__slider-image">
+                    <img class="carts__slider-img" src="images/carts/cart4.svg" alt="">
+                  </div>
                   <div class="carts__slider-text">
                     <div class="slider__text-title">Antminer Z15e 200 ksol</div>
                     <div class="slider__text-box">
@@ -308,8 +330,10 @@
                   </div>
                   </div>
                   <div class="carts__slider-price">
-                    <div class="slider__price-text">290 000 ₽</div>
-                    <div class="slider__price-desc">325 000 ₽</div>
+                    <div class="slider__price-box">
+                      <div class="slider__price-text">290 000 ₽</div>
+                      <div class="slider__price-desc">325 000 ₽</div>
+                    </div>
                     <div class="slider__price-icon">
                       <img src="images/carts/basket.svg" alt="">
                     </div>
@@ -321,12 +345,14 @@
                     <div class="slider__head-plagin">ХИТ</div>
                     <img class="slider__head-icon" src="images/carts/heart.svg" alt="">
                   </div>
-                  <img class="carts__slider-img" src="images/carts/cart5.svg" alt="">
+                  <div class="carts__slider-image">
+                    <img class="carts__slider-img" src="images/carts/cart5.svg" alt="">
+                  </div>
                   <div class="carts__slider-text">
                     <div class="slider__text-title">Innosilicon A11 1500 Mh/s...</div>
                     <div class="slider__text-box">
                       <div class="slider__text-dot"></div>
-                    <div class="sleder__text-subtitle">В наличии</div>
+                    <div class="sleder__text-subtitle">Под заказ</div>
                   </div>
                   </div>
                   <div class="carts__slider-price">
@@ -365,9 +391,11 @@
             <div class="company__description">
               <ul class="description__list">
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon1.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon1.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -375,9 +403,11 @@
                   </div>
                 </li>
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon2.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon2.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -385,9 +415,11 @@
                   </div>
                 </li>
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon3.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon3.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -395,9 +427,11 @@
                   </div>
                 </li>
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon4.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon4.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -405,9 +439,11 @@
                   </div>
                 </li>
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon5.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon5.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -415,9 +451,11 @@
                   </div>
                 </li>
                 <li class="description__item">
-                  <div class="description__icon">
-                    <div class="description__icon-box">
-                      <img class="description__icon-img" src="images/company/icon6.svg" alt="">
+                  <div class="description_icon">
+                    <div class="description__icon-white">
+                      <div class="description__icon-gray">
+                        <img class="description__icon-img" src="images/company/icon6.svg" alt="">
+                      </div>
                     </div>
                   </div>
                   <div class="description__text">
@@ -452,7 +490,7 @@
                   <input  class="aplication__form-default" type="checkbox" required>
                   <span class="aplication__form-custom"></span>
                 </div>
-                Согласен на обработку <a class="aplicantion__link" href="#" alt="">персональных данных</a>
+                <div>Согласен на обработку <u>персональных данных</u></div>
               </label>
             </form>
           </div>
@@ -529,7 +567,9 @@
             </ul>
           </div>
           <div class="footer__col">
-            <div class="footer__col-button button1">Заказать звонок</div>
+            <div class="footer__col-button">
+              <a href="" class="footer__col-btn button1">Заказать звонок</a>
+            </div>
             <div class="footer__col-text">
               <div class="footer__col-subtitle">Публичная оферта</div>
               <div class="footer__col-subtitle">Политика конфиденциальности</div>
