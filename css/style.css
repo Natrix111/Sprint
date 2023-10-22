@@ -210,12 +210,12 @@ body {
   opacity: 0.5;
 }
 
-.header__btn-box {
+.header__button-box {
   display: flex;
   align-items: center;
 }
 
-.header__btn {
+.header__button {
   color: #FFF;
   font-size: 13px;
   font-weight: 700;
@@ -467,30 +467,30 @@ body {
   margin-left: 10px;
 }
 
-/* ============================== ADVENTAGES ============================== */
-/* ============================== ADVENTAGES ============================== */
+/* ============================== ADVANTAGES ============================== */
+/* ============================== ADVANTAGES ============================== */
 
-.adventages__inner {
+.advantages__inner {
   display: flex;
   width: 1180px;
   height: 374px;
   border-radius: 10px;
-  background: url(../images/adventages/background.svg) no-repeat, url(../images/adventages/big-ellipse.svg) no-repeat, url(../images/adventages/fans.svg) no-repeat, radial-gradient(130.91% 98.19% at -8.58% -1.44%, #42E8E0 0%, #40DDDA 1.57%, #3AAEC0 9.21%, #3484A9 17.3%, #2F6195 25.73%, #2B4486 34.58%, #282E79 44%, #180564 82.26%);
+  background: url(../images/advantages/background.svg) no-repeat, url(../images/advantages/big-ellipse.svg) no-repeat, url(../images/advantages/fans.svg) no-repeat, radial-gradient(130.91% 98.19% at -8.58% -1.44%, #42E8E0 0%, #40DDDA 1.57%, #3AAEC0 9.21%, #3484A9 17.3%, #2F6195 25.73%, #2B4486 34.58%, #282E79 44%, #180564 82.26%);
   background-position: center, right bottom, 55px;
   box-shadow: 0 4px 20px 0 rgba(0, 7, 94, 0.10);
 }
 
-.adventages__heading {
+.advantages__heading {
   padding: 29px 107px 15px 55px;
 }
 
-.adventages__heading-title {
+.advantages__heading-title {
   width: 341px;
   font-size: 36px;
   font-weight: 800;
 }
 
-.adventages__content-list {
+.advantages__content-list {
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, auto);
   row-gap: 40px;
@@ -498,7 +498,7 @@ body {
   padding: 50px 98px 56px 0;
 }
 
-.adventages__content-elipse {
+.advantages__content-elipse {
   width: 60px;
   height: 60px;
   flex-shrink: 0;
@@ -511,7 +511,7 @@ body {
   margin-bottom: 10px;
 }
 
-.adventages__content-text {
+.advantages__content-text {
   font-size: 16px;
   font-weight: 600;
 }
@@ -937,23 +937,23 @@ body {
   padding: 60px 0;
 }
 
-.footer__col {
+.footer__column {
   display: flex;
   flex-direction: column;
 }
 
-.footer__col-logo {
+.footer__column-logo {
   font-size: 22px;
   margin-bottom: 16px;
 }
 
-.footer__col-mark {
+.footer__column-mark {
   color: #B8B8B8;
   font-size: 15px;
   font-weight: 400;
 }
 
-.footer__col-title {
+.footer__column-title {
   color: #B8B8B8;
   font-size: 16px;
   font-weight: 700;
@@ -962,19 +962,19 @@ body {
   margin-bottom: 20px;
 }
 
-.footer__col-item {
+.footer__column-item {
   color: #FFF;
   font-size: 15px;
   font-weight: 400;
   margin-bottom: 8px;
 }
 
-.footer__col-button {
+.footer__column-button {
   margin-bottom: 118px;
   margin-left: 60px;
 }
 
-.footer__col-subtitle {
+.footer__column-subtitle {
   color: #B8B8B8;
   text-align: right;
   font-size: 15px;
@@ -1001,10 +1001,9 @@ body {
 
   .header__logo {
     font-size: 18px;
-    margin-right: 63px;
   }
 
-  .header__nav, .header__btn-box {
+  .header__nav, .header__button-box {
     display: none;
   }
 
@@ -1018,6 +1017,10 @@ body {
     height: 36px;
   }
 
+  /* ============================== MAIN ============================== */
+  main {
+    padding: 0 10px;
+  }
   /* ============================== OFFERS ============================== */
   .offers {
     padding-top: 20px;
@@ -1206,31 +1209,31 @@ body {
     margin-left: 8px;
   }
 
-  /* ============================== ADVENTAGES ============================== */
-  .main__advantages {
+  /* ============================== ADVANTAGES ============================== */
+  .advantages {
     padding-top: 60px;
   }
 
-  .adventages__inner {
+  .advantages__inner {
     width: 300px;
     height: 818px;
     flex-direction: column;
     padding: 30px 20px 0 30px;
     background: url(../images/media/bg-grid.svg) no-repeat, url(../images/media/right-ellipse.svg) no-repeat, url(../images/media/gpu.svg) no-repeat, radial-gradient(130.91% 98.19% at -8.58% -1.44%, #42E8E0 0%, #40DDDA 1.57%, #3AAEC0 9.21%, #3484A9 17.3%, #2F6195 25.73%, #2B4486 34.58%, #282E79 44%, #180564 82.26%);
-    background-position: center, right center, bottom;
+    background-position: center, right center, 26px 540px;
   }
 
-  .adventages__heading {
+  .advantages__heading {
     padding: 0;
     margin-bottom: 20px;
   }
 
-  .adventages__heading-title {
+  .advantages__heading-title {
     width: 242px;
     font-size: 22px;
   }
 
-  .adventages__content-list {
+  .advantages__content-list {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
@@ -1238,17 +1241,17 @@ body {
     padding: 0;
   }
 
-  .adventages__content-item {
+  .advantages__content-item {
     display: flex;
     align-items: center;
   }
 
-  .adventages__content-elipse {
+  .advantages__content-elipse {
     margin-bottom: 0;
     margin-right: 14px;
   }
 
-  .adventages__content-text {
+  .advantages__content-text {
     font-size: 16px;
     font-weight: 600;
   }
@@ -1350,7 +1353,7 @@ body {
   }
 
   /* ============================== COMPANY ============================== */
-  .main__company {
+  .company {
     padding-top: 60px;
   }
 
@@ -1407,7 +1410,7 @@ body {
   }
 
   /* ============================== APLICATION ============================== */
-  .main__application {
+  .application {
     padding-top: 60px;
   }
 
@@ -1474,7 +1477,7 @@ body {
   }
 
   /* ============================== CONTACT ============================== */
-  .main__contact {
+  .contact {
     padding-top: 60px;
   }
 
@@ -1523,38 +1526,38 @@ body {
     position: relative;
   }
 
-  .footer__col {
+  .footer__column {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
   }
 
-  .footer__col:first-child {
+  .footer__column:first-child {
     margin-bottom: 106px;
   }
 
-  .footer__col:last-child {
+  .footer__column:last-child {
     margin-bottom: 0;
   }
 
-  .footer__col-logo {
+  .footer__column-logo {
     margin-bottom: 0;
   }
 
-  .footer__col-mark {
+  .footer__column-mark {
     margin-bottom: 0;
     position: absolute;
     bottom: 40px;
   }
 
-  .footer__col-button {
+  .footer__column-button {
     margin-bottom: 40px;
     margin-left: 0;
     position: absolute;
     top: 90px;
   }
 
-  .footer__col-subtitle {
+  .footer__column-subtitle {
     text-align: left;
   }
 }
