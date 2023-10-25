@@ -1,0 +1,10 @@
+body {
+    background: #6bfff8;
+}
+#clear-form {
+    display: none;
+}
+.color-label {
+    width: 25px;
+    height: 25px;
+}
