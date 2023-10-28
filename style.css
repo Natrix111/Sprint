@@ -1,0 +1,13 @@
+body {
+    background: #31fcbc;
+}
+
+#clear-form {
+    display: none;
+}
+
+.color-label {
+    width: 25px;
+    height: 25px;
+    border: 2px solid;
+}
