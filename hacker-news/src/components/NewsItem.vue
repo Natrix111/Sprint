@@ -1,18 +1,17 @@
 <template>
-  <div class="news__item">
-    <button class="news__button" @click="goBack">Назад</button>
-    <h1>{{ newsItem.title }}</h1>
-    <p>Author: {{ newsItem.by }}</p>
-    <p>Date: {{ formatDate(newsItem.time) }}</p>
-    <p>Comments: {{ newsItem.comments }}</p>
-    <a :href="newsItem.url" target="_blank">Read More</a>
-    <button class="news__button" @click="refreshComments">Обновить коментарии</button>
-    <ul v-if="commentsList.length">
-      <li v-for="comment in commentsList" :key="comment.id">
-        <p>{{ comment.content }}</p>
-        <ul v-if="comment.children.length">
-          <li v-for="childComment in comment.children" :key="childComment.id">
-            <p>{{ childComment.content }}</p>
+  <div>
+    <button @click="goBack">Back to news list</button>
+    <h2>{{ news.title }}</h2>
+    <p>Author: {{ news.by }}</p>
+    <p>Date: {{ formatDate(news.time) }}</p>
+    <p>Comments: {{ news.descendants }}</p>
+    <a :href="news.url" target="_blank">Read more</a>
+    <ul v-if="comments.length">
+      <li v-for="comment in comments" :key="comment.id">
+        <p>{{ comment.text }}</p>
+        <ul v-if="comment.kids && comment.kids.length">
+          <li v-for="childComment in comment.kids" :key="childComment.id">
+            <p>{{ childComment.text }}</p>
           </li>
         </ul>
       </li>
@@ -21,53 +20,53 @@
 </template>
 
 <script>
-import axios from 'axios';
-
+import axios from "axios";
 
 export default {
+  props: {
+    newsId: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {
-      newsItem: {},
-      commentsList: []
+      news: {},
+      comments: []
     };
   },
-  created() {
-    this.fetchNewsItem();
-    this.fetchComments();
-    setInterval(this.fetchComments, 60000);
-  },
   methods: {
-    fetchNewsItem() {
-      const newsId = this.$route.params.id;
-      axios.get(`https://api.hnpwa.com/v0/item/${newsId}.json`)
-        .then(response => {
-          this.newsItem = response.data;
-        })
-    },
-    fetchComments() {
-      const newsId = this.$route.params.id;
-      axios.get(`https://api.hnpwa.com/v0/item/${newsId}.json`)
-        .then(response => {
-          this.commentsList = response.data.comments;
-        })
-    },
-    refreshComments() {
-      this.fetchComments();
+    async fetchNewsItem() {
+      try {
+        const response = await axios.get(
+          `https://hacker-news.firebaseio.com/v0/item/${this.newsId}.json`
+      );
+        this.news = response.data;
+        if (this.news.kids) {
+          const commentPromises = this.news.kids.slice(0, 10).map(id =>
+            axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+        );
+          const commentData = await Promise.all(commentPromises);
+          this.comments = commentData.map(comment => comment.data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     },
     formatDate(timestamp) {
       const date = new Date(timestamp * 1000);
       return date.toLocaleString();
     },
     goBack() {
-      this.$router.push('/');
+      this.$router.push("/");
     }
+  },
+  mounted() {
+    this.fetchNewsItem();
   }
 };
 </script>
 
-<style>
-  .news__item {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-</style>
+
+
+
