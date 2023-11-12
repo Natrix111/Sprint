@@ -1,71 +1,94 @@
 <template>
-  <div>
-    <button @click="goBack">Back to news list</button>
-    <h2>{{ news.title }}</h2>
-    <p>Author: {{ news.by }}</p>
-    <p>Date: {{ formatDate(news.time) }}</p>
-    <p>Comments: {{ news.descendants }}</p>
-    <a :href="news.url" target="_blank">Read more</a>
-    <ul v-if="comments.length">
+  <div class="item">
+    <h1 class="item__title">{{ newsItem.title }}</h1>
+    <p class="item__author">Автор: {{ newsItem.by }}</p>
+    <p class="item__time">Дата: {{ formatDate(newsItem.time) }}</p>
+    <p class="item__comments">Счетчик комментариев: {{ newsItem.descendants }}</p>
+    <button class="item__button" @click="refreshComments">Обновить комментарии</button>
+    <ul>
       <li v-for="comment in comments" :key="comment.id">
-        <p>{{ comment.text }}</p>
-        <ul v-if="comment.kids && comment.kids.length">
-          <li v-for="childComment in comment.kids" :key="childComment.id">
-            <p>{{ childComment.text }}</p>
+        <div v-html="comment.text"></div>
+        <ul v-if="comment.kids && comment.kids.length > 0">
+          <li v-for="kidId in comment.kids" :key="kidId">
+            <div v-html="getCommentText(kidId)"></div>
           </li>
         </ul>
       </li>
     </ul>
+    <router-link to="/"><button class="item__button">Вернуться к списку новостей</button></router-link>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  props: {
-    newsId: {
-      type: Number,
-      required: true
-    }
-  },
   data() {
     return {
-      news: {},
+      newsItem: {},
       comments: []
     };
   },
+  created() {
+    const newsId = this.$route.params.id;
+    this.fetchNewsItem(newsId);
+    this.fetchComments(newsId);
+    setInterval(this.fetchComments, 60000);
+  },
   methods: {
-    async fetchNewsItem() {
-      try {
-        const response = await axios.get(
-          `https://hacker-news.firebaseio.com/v0/item/${this.newsId}.json`
-      );
-        this.news = response.data;
-        if (this.news.kids) {
-          const commentPromises = this.news.kids.slice(0, 10).map(id =>
-            axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-        );
-          const commentData = await Promise.all(commentPromises);
-          this.comments = commentData.map(comment => comment.data);
-        }
-      } catch (error) {
-        console.error(error);
-      }
+    fetchNewsItem(newsId) {
+      axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`)
+    .then(response => {
+        this.newsItem = response.data;
+      })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    fetchComments(newsId) {
+      axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`)
+    .then(response => {
+        const kids = response.data.kids.slice(0, 10);
+        const requests = kids.map(id => axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
+        Promise.all(requests)
+          .then(responses => {
+            this.comments = responses.map(response => response.data);
+          });
+      })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+    refreshComments() {
+      this.fetchComments(this.$route.params.id);
     },
     formatDate(timestamp) {
       const date = new Date(timestamp * 1000);
       return date.toLocaleString();
     },
-    goBack() {
-      this.$router.push("/");
+    getCommentText(commentId) {
+      const comment = this.comments.find(c => c.id === commentId);
+      return comment.text;
     }
-  },
-  mounted() {
-    this.fetchNewsItem();
   }
 };
 </script>
+
+
+<style>
+.item {
+  background: antiquewhite;
+  padding-left: 10px;
+}
+
+.item__button {
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  background: #ffe148;
+}
+
+</style>
+
 
 
 

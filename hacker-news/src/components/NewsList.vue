@@ -4,7 +4,7 @@
     <button class="news__button" @click="refreshNews">ОБНОВИТЬ</button>
     <p class="news__error" v-if="isLoading">LOADING...</p>
     <ul class="news__list" v-if="!isLoading">
-      <li  class="news__list-item" v-for="newsItem in newsList" :key="newsItem.id">
+      <li  class="news__list-item" v-for="newsItem in newsList" :key="newsItem.id" @click="goToNewsItem(newsItem.id)">
         <h2 class="news__item-title">{{ newsItem.title }}</h2>
         <p class="news__item-score">Рейтинг: {{ newsItem.score }}</p>
         <p class="news__item-author">Автор: {{ newsItem.by }}</p>
@@ -33,11 +33,11 @@ export default {
   methods: {
     getNews() {
       this.isLoading = true;
-      axios.get('https://hacker-news.firebaseio.com/v0/topstories.json')
+      axios.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
         .then(response => {
           const top100News = response.data.slice(0, 100);
           const promises = top100News.map(newsId => {
-            return axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json`);
+            return axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`);
           });
           Promise.all(promises)
             .then(responses => {
@@ -54,6 +54,9 @@ export default {
 
     refreshNews() {
       this.getNews();
+    },
+    goToNewsItem(newsId) {
+      this.$router.push({ name: 'NewsItem', params: { id: newsId } });
     }
   }
 };

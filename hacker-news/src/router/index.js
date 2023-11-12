@@ -3,12 +3,21 @@ import NewsList from '../components/NewsList.vue';
 import NewsItem from '../components/NewsItem.vue';
 
 const routes = [
-  { path: '/', component: NewsList },
-  { path: '/news/:id', component: NewsItem }
+  {
+    path: '/',
+    name: 'NewsList',
+    component: NewsList
+  },
+  {
+    path: '/news/:id',
+    name: 'NewsItem',
+    component: NewsItem
+  }
 ];
 
 const router = createRouter({
-  history: createWebHistory(), routes
+  history: createWebHistory(),
+  routes
 });
 
 export default router;
