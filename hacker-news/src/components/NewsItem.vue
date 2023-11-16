@@ -38,26 +38,20 @@ export default {
   methods: {
     fetchNewsItem(newsId) {
       axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`)
-    .then(response => {
-        this.newsItem = response.data;
-      })
-        .catch(error => {
-          console.error(error);
-        });
+        .then(response => {
+          this.newsItem = response.data;
+        })
     },
     fetchComments(newsId) {
       axios.get(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`)
-    .then(response => {
-        const kids = response.data.kids.slice(0, 10);
-        const requests = kids.map(id => axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
-        Promise.all(requests)
-          .then(responses => {
-            this.comments = responses.map(response => response.data);
-          });
-      })
-        .catch(error => {
-          console.error(error);
-        });
+        .then(response => {
+          const kids = response.data.kids.slice(0, 10);
+          const requests = kids.map(id => axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
+          Promise.all(requests)
+            .then(responses => {
+              this.comments = responses.map(response => response.data);
+            });
+        })
     },
     refreshComments() {
       this.fetchComments(this.$route.params.id);
